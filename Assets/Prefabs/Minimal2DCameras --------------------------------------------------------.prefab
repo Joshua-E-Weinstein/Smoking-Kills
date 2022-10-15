@@ -3538,7 +3538,7 @@ MonoBehaviour:
   InputDetectionActive: 1
   ResetButtonStatesOnFocusLoss: 1
   PlayerID: Player1
-  AutoMobileDetection: 1
+  AutoMobileDetection: 0
   InputForcedMode: 0
   ForceWeaponMode: 0
   WeaponForcedMode: 0
@@ -4669,7 +4669,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 0
-    m_SensorSize: {x: 2.1213872, y: 1}
+    m_SensorSize: {x: 1.7475915, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
