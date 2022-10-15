@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 3429108892485659030}
   - component: {fileID: 9137211484821364158}
   - component: {fileID: 3587237916690405032}
+  - component: {fileID: 8318411188160593401}
   m_Layer: 13
   m_Name: AI
   m_TagString: Untagged
@@ -59,6 +60,15 @@ MonoBehaviour:
     Transitions:
       array:
       - Decision: {fileID: 5999559107185597361}
+        TrueState: Visual Confirmation
+        FalseState: 
+  - StateName: Visual Confirmation
+    Actions:
+      array:
+      - {fileID: 3447363153661893358}
+    Transitions:
+      array:
+      - Decision: {fileID: 8318411188160593401}
         TrueState: Moving
         FalseState: 
   - StateName: Moving
@@ -73,6 +83,9 @@ MonoBehaviour:
       - Decision: {fileID: 5312516794643693511}
         TrueState: 
         FalseState: Detecting
+      - Decision: {fileID: 8318411188160593401}
+        TrueState: 
+        FalseState: Detecting
       - Decision: {fileID: 9137211484821364158}
         TrueState: Attacking
         FalseState: 
@@ -83,6 +96,9 @@ MonoBehaviour:
     Transitions:
       array:
       - Decision: {fileID: 9137211484821364158}
+        TrueState: 
+        FalseState: Detecting
+      - Decision: {fileID: 8318411188160593401}
         TrueState: 
         FalseState: Detecting
   TimeInThisState: 0
@@ -108,8 +124,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2a946a428cb16e1409d657b9041c69be, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Label: 
-  Radius: 3
+  Label: In Sight Radius
+  Radius: 7
   DetectionOriginOffset: {x: 0, y: 0, z: 0}
   TargetLayer:
     serializedVersion: 2
@@ -134,7 +150,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 05f21b170839d044b8b9bf160d1be05b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Label: 
+  Label: Target Alive
 --- !u!114 &3447363153661893358
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -148,7 +164,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   InitializationMode: 0
-  Label: 
+  Label: Do Nothing
 --- !u!114 &3429108892485659030
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -162,7 +178,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   InitializationMode: 0
-  Label: 
+  Label: Move towards target
   MinimumDistance: 1
 --- !u!114 &9137211484821364158
 MonoBehaviour:
@@ -176,7 +192,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 206825d6db9c84741810b9da915cfb9c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Label: 
+  Label: In Attack Range
   ComparisonMode: 1
   Distance: 1
 --- !u!114 &3587237916690405032
@@ -191,8 +207,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dfeeda23b87d1aa479c435dc5d0b4703, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  InitializationMode: 0
-  Label: 
+  InitializationMode: 1
+  Label: Raise Death Event
   TargetEvent:
     m_PersistentCalls:
       m_Calls:
@@ -209,6 +225,19 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   OnlyPlayWhenEnteringState: 1
+--- !u!114 &8318411188160593401
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 625487056830826830}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f15250d2c6f05345a42561fe7b97aa5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Label: Can see target
 --- !u!1 &4741896475900723792
 GameObject:
   m_ObjectHideFlags: 0
@@ -262,7 +291,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

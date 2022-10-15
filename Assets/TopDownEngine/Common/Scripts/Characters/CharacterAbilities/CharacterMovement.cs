@@ -139,7 +139,9 @@ namespace MoreMountains.TopDownEngine
 			base.ProcessAbility();
 			
 			if (!AbilityAuthorized
-			    || ((_condition.CurrentState != CharacterStates.CharacterConditions.Normal) && (_condition.CurrentState != CharacterStates.CharacterConditions.ControlledMovement)))
+			    || ((_condition.CurrentState != CharacterStates.CharacterConditions.Normal) 
+					&& (_condition.CurrentState != CharacterStates.CharacterConditions.ControlledMovement) 
+					&& (_condition.CurrentState != CharacterStates.CharacterConditions.SmokeMode)))
 			{
 				if (AbilityAuthorized)
 				{
@@ -305,7 +307,8 @@ namespace MoreMountains.TopDownEngine
 
 			// if movement is prevented, or if the character is dead/frozen/can't move, we exit and do nothing
 			if ( !AbilityAuthorized
-			     || (_condition.CurrentState != CharacterStates.CharacterConditions.Normal) )
+			     || (_condition.CurrentState != CharacterStates.CharacterConditions.Normal
+				 	&& _condition.CurrentState != CharacterStates.CharacterConditions.SmokeMode) )
 			{
 				return;				
 			}

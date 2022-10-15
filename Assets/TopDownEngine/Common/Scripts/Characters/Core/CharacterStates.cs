@@ -17,7 +17,8 @@ namespace MoreMountains.TopDownEngine
 			Frozen,
 			Paused,
 			Dead,
-			Stunned
+			Stunned,
+			SmokeMode
 		}
 
 		/// The possible Movement States the character can be in. These usually correspond to their own class, 
