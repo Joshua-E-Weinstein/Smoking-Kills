@@ -34,11 +34,11 @@ namespace MoreMountains.TopDownEngine // you might want to use your own namespac
 		/// </summary>
 		protected override void HandleInput()
 		{
-			if (_inputManager.SmokeModeButton.State.CurrentState == MMInput.ButtonStates.ButtonDown || _inputManager.SmokeModeButton.State.CurrentState == MMInput.ButtonStates.ButtonPressed)
+			if ((_inputManager.SmokeModeButton.State.CurrentState == MMInput.ButtonStates.ButtonDown || _inputManager.SmokeModeButton.State.CurrentState == MMInput.ButtonStates.ButtonPressed) && PlayerSmoke.smoke > 0)
 			{
 				SmokeModeStart();
 			}				
-			if (_inputManager.SmokeModeButton.State.CurrentState == MMInput.ButtonStates.ButtonUp)
+			if (_inputManager.SmokeModeButton.State.CurrentState == MMInput.ButtonStates.ButtonUp || PlayerSmoke.smoke <= 0)
 			{
 				SmokeModeStop();
 			}
@@ -76,12 +76,12 @@ namespace MoreMountains.TopDownEngine // you might want to use your own namespac
 				StopSfx ();
 			}
 			// if we're not moving fast enough, we go back to idle
-			if ((Mathf.Abs(_controller.CurrentMovement.magnitude) < SmokeModeSpeed / 10) && (_movement.CurrentState == CharacterStates.MovementStates.SmokeMode))
+			/*if ((Mathf.Abs(_controller.CurrentMovement.magnitude) < SmokeModeSpeed / 10) && (_movement.CurrentState == CharacterStates.MovementStates.SmokeMode))
 			{
 				_movement.ChangeState (CharacterStates.MovementStates.Idle);
 				StopFeedbacks();
 				StopSfx ();
-			}
+			}*/
 			if (!_controller.Grounded && _abilityInProgressSfx != null)
 			{
 				StopFeedbacks();
