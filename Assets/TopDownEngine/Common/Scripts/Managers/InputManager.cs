@@ -72,6 +72,8 @@ namespace MoreMountains.TopDownEngine
 		[Tooltip("if this is true, any directional input coming into this input manager will be rotated to align with the current camera orientation")]
 		public bool RotateInputBasedOnCameraDirection = false;
         
+		/// the smoke mode button
+		public MMInput.IMButton SmokeModeButton { get; protected set; }
 		/// the jump button, used for jumps and validation
 		public MMInput.IMButton JumpButton { get; protected set; }
 		/// the run button
@@ -188,6 +190,7 @@ namespace MoreMountains.TopDownEngine
 		protected virtual void InitializeButtons()
 		{
 			ButtonList = new List<MMInput.IMButton> ();
+			ButtonList.Add(SmokeModeButton = new MMInput.IMButton (PlayerID, "SmokeMode", SmokeModeButtonDown, SmokeModeButtonPressed, SmokeModeButtonUp));
 			ButtonList.Add(JumpButton = new MMInput.IMButton (PlayerID, "Jump", JumpButtonDown, JumpButtonPressed, JumpButtonUp));
 			ButtonList.Add(RunButton  = new MMInput.IMButton (PlayerID, "Run", RunButtonDown, RunButtonPressed, RunButtonUp));
 			ButtonList.Add(InteractButton = new MMInput.IMButton(PlayerID, "Interact", InteractButtonDown, InteractButtonPressed, InteractButtonUp));
@@ -485,6 +488,10 @@ namespace MoreMountains.TopDownEngine
 				}
 			}
 		}
+
+		public virtual void SmokeModeButtonDown()		{ SmokeModeButton.State.ChangeState (MMInput.ButtonStates.ButtonDown); }
+		public virtual void SmokeModeButtonPressed()		{ SmokeModeButton.State.ChangeState (MMInput.ButtonStates.ButtonPressed); }
+		public virtual void SmokeModeButtonUp()			{ SmokeModeButton.State.ChangeState (MMInput.ButtonStates.ButtonUp); }
 
 		public virtual void JumpButtonDown()		{ JumpButton.State.ChangeState (MMInput.ButtonStates.ButtonDown); }
 		public virtual void JumpButtonPressed()		{ JumpButton.State.ChangeState (MMInput.ButtonStates.ButtonPressed); }
