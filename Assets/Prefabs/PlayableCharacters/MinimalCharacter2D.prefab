@@ -21,7 +21,6 @@ GameObject:
   - component: {fileID: 114042670615466288}
   - component: {fileID: 114450207927170996}
   - component: {fileID: -3346912431416018127}
-  - component: {fileID: 3700603422120976068}
   m_Layer: 10
   m_Name: MinimalCharacter2D
   m_TagString: Player
@@ -60,7 +59,7 @@ MonoBehaviour:
   CharacterDimension: 0
   CharacterType: 0
   PlayerID: Player1
-  CharacterAnimator: {fileID: 0}
+  CharacterAnimator: {fileID: 8742741062940219473}
   UseDefaultMecanim: 1
   RunAnimatorSanityChecks: 0
   DisableAnimatorLogs: 1
@@ -187,13 +186,15 @@ MonoBehaviour:
   BlockingConditionStates: 
   FacingMode: 1
   FacingBase: 0
-  ModelShouldFlip: 1
+  ModelShouldFlip: 0
   ModelFlipValueLeft: {x: -1, y: 1, z: 1}
   ModelFlipValueRight: {x: 1, y: 1, z: 1}
-  ModelShouldRotate: 0
-  ModelRotationValueLeft: {x: 0, y: 180, z: 0}
-  ModelRotationValueRight: {x: 0, y: 0, z: 0}
-  ModelRotationSpeed: 0
+  ModelShouldRotate: 1
+  ModelRotationValueLeft: {x: 0, y: 0, z: 90}
+  ModelRotationValueRight: {x: 0, y: 0, z: 270}
+  ModelRotationValueUp: {x: 0, y: 0, z: 0}
+  ModelRotationValueDown: {x: 0, y: 0, z: 180}
+  ModelRotationSpeed: 5
   InitialFacingDirection: 1
   AbsoluteThresholdMovement: 0.5
   AbsoluteThresholdWeapon: 0.5
@@ -389,18 +390,6 @@ MonoBehaviour:
   SmokeModeSpeed: 16
   SmokeActivate: {fileID: 11400000, guid: bed7d54db7c234b4ab4915a83e4f4cfd, type: 2}
   SmokeDeactivate: {fileID: 11400000, guid: e2fd688b6a3b6484fa3c2df3503c7558, type: 2}
---- !u!114 &3700603422120976068
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1790328835693532}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e2f1d52216c52b040aa5160e8ad8ac96, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1997364199477008
 GameObject:
   m_ObjectHideFlags: 0
@@ -411,6 +400,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4417269262889042}
   - component: {fileID: 212503738640729348}
+  - component: {fileID: 8742741062940219473}
   m_Layer: 10
   m_Name: MinimalCharacterModel
   m_TagString: Untagged
@@ -474,7 +464,7 @@ SpriteRenderer:
   m_SortingLayerID: 47421343
   m_SortingLayer: 4
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: eeb68d44a260e964584c4310ad5add3a, type: 3}
+  m_Sprite: {fileID: 79851873, guid: bebf56ba9ae4af34ba63802fde005006, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -485,3 +475,23 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!95 &8742741062940219473
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1997364199477008}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: b89604a87e3e11f4389a94739b8d07d9, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
