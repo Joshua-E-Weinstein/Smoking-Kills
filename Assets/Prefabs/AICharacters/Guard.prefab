@@ -333,7 +333,7 @@ Animator:
   m_GameObject: {fileID: 4741896475900723792}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 5441eb0ff686c9b4f8d139aec7ceeec6, type: 2}
+  m_Controller: {fileID: 9100000, guid: db8e4f97b7611f247bd97690aeae7c76, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -561,13 +561,15 @@ MonoBehaviour:
   BlockingConditionStates: 
   FacingMode: 1
   FacingBase: 0
-  ModelShouldFlip: 1
+  ModelShouldFlip: 0
   ModelFlipValueLeft: {x: -1, y: 1, z: 1}
   ModelFlipValueRight: {x: 1, y: 1, z: 1}
-  ModelShouldRotate: 0
-  ModelRotationValueLeft: {x: 0, y: 180, z: 0}
-  ModelRotationValueRight: {x: 0, y: 0, z: 0}
-  ModelRotationSpeed: 0
+  ModelShouldRotate: 1
+  ModelRotationValueLeft: {x: 0, y: 0, z: 90}
+  ModelRotationValueRight: {x: 0, y: 0, z: 270}
+  ModelRotationValueUp: {x: 0, y: 0, z: 0}
+  ModelRotationValueDown: {x: 0, y: 0, z: 180}
+  ModelRotationSpeed: 5
   InitialFacingDirection: 1
   AbsoluteThresholdMovement: 0.5
   AbsoluteThresholdWeapon: 0.5

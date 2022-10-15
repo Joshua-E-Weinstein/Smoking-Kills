@@ -44,11 +44,19 @@ namespace MoreMountains.TopDownEngine
 		/// the rotation to apply to the model when it changes direction		
 		[MMCondition("ModelShouldRotate", true)]
 		[Tooltip("the rotation to apply to the model when it changes direction")]
-		public Vector3 ModelRotationValueLeft = new Vector3(0f, 180f, 0f);
+		public Vector3 ModelRotationValueLeft = new Vector3(0f, 0f, 90f);
 		/// the rotation to apply to the model when it changes direction		
 		[MMCondition("ModelShouldRotate", true)]
 		[Tooltip("the rotation to apply to the model when it changes direction")]
-		public Vector3 ModelRotationValueRight = new Vector3(0f, 0f, 0f);
+		public Vector3 ModelRotationValueRight = new Vector3(0f, 0f, 270f);
+		/// the rotation to apply to the model when it changes direction		
+		[MMCondition("ModelShouldRotate", true)]
+		[Tooltip("the rotation to apply to the model when it changes direction")]
+		public Vector3 ModelRotationValueUp = new Vector3(0f, 0f, 0f);
+		/// the rotation to apply to the model when it changes direction		
+		[MMCondition("ModelShouldRotate", true)]
+		[Tooltip("the rotation to apply to the model when it changes direction")]
+		public Vector3 ModelRotationValueDown = new Vector3(0f, 0f, 180f);
 		/// the speed at which to rotate the model when changing direction, 0f means instant rotation		
 		[MMCondition("ModelShouldRotate", true)]
 		[Tooltip("the speed at which to rotate the model when changing direction, 0f means instant rotation	")]
@@ -238,6 +246,8 @@ namespace MoreMountains.TopDownEngine
             
 			_lastDirectionX = _horizontalDirection;
 			_lastDirectionY = _verticalDirection;
+
+			ApplyCurrentDirection();
 		}
 
 		/// <summary>
@@ -279,7 +289,28 @@ namespace MoreMountains.TopDownEngine
 
 			if (ModelRotationSpeed > 0f)
 			{
+				if (_character.CharacterModel.transform.localEulerAngles.z - _targetModelRotation.z >= 180)
+				{
+					Debug.Log(_character.CharacterModel.transform.localEulerAngles.z + " " + _targetModelRotation.z);
+					_targetModelRotation.z += 360;
+				} else if (_character.CharacterModel.transform.localEulerAngles.z - _targetModelRotation.z <= -180){
+					Debug.Log(_character.CharacterModel.transform.localEulerAngles.z + " " + _targetModelRotation.z);
+					_targetModelRotation.z -= 360;
+				}
 				_character.CharacterModel.transform.localEulerAngles = Vector3.Lerp(_character.CharacterModel.transform.localEulerAngles, _targetModelRotation, Time.deltaTime * ModelRotationSpeed);
+				
+
+				
+				
+				
+				// else
+				// 	_character.CharacterModel.transform.localEulerAngles = Vector3.Lerp(_character.CharacterModel.transform.localEulerAngles, _targetModelRotation, Time.deltaTime * ModelRotationSpeed);
+				// Vector3 target = Vector3.Lerp(_character.CharacterModel.transform.localEulerAngles, _targetModelRotation, Time.deltaTime * ModelRotationSpeed);
+				// Vector3 newRotation = Vector3.RotateTowards(_character.CharacterModel.transform.up, target, 1, 0.0f);
+				// Debug.Log(newRotation.x);
+				// Debug.Log(newRotation.y);
+				// Debug.Log(newRotation.z);
+				// _character.CharacterModel.transform.rotation = Quaternion.LookRotation(_targetModelRotation);
 			}
 			else
 			{
@@ -409,7 +440,22 @@ namespace MoreMountains.TopDownEngine
 		{
 			if (_character.CharacterModel != null)
 			{
-				_targetModelRotation = (direction == 1) ? ModelRotationValueRight : ModelRotationValueLeft;
+				
+				switch (CurrentFacingDirection)
+				{
+					case Character.FacingDirections.East:
+						_targetModelRotation = ModelRotationValueRight;
+						break;
+					case Character.FacingDirections.West:
+						_targetModelRotation = ModelRotationValueLeft;
+						break;
+					case Character.FacingDirections.North:
+						_targetModelRotation = ModelRotationValueUp;
+						break;
+					case Character.FacingDirections.South:
+						_targetModelRotation = ModelRotationValueDown;
+						break;
+				}
 				_targetModelRotation.x = _targetModelRotation.x % 360;
 				_targetModelRotation.y = _targetModelRotation.y % 360;
 				_targetModelRotation.z = _targetModelRotation.z % 360;
