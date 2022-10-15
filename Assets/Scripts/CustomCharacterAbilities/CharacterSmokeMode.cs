@@ -62,14 +62,14 @@ namespace MoreMountains.TopDownEngine // you might want to use your own namespac
 			{
 				StopAbilityUsedSfx();
 			}
-			if (_movement.CurrentState == CharacterStates.MovementStates.SmokeMode && AbilityInProgressSfx != null && _abilityInProgressSfx == null)
+			if (_condition.CurrentState == CharacterStates.CharacterConditions.SmokeMode && AbilityInProgressSfx != null && _abilityInProgressSfx == null)
 			{
 				PlayAbilityUsedSfx();
 			}
 			// if we're in smoke mode and not grounded, we change our state to Falling
 			if (!_controller.Grounded
 			    && (_condition.CurrentState == CharacterStates.CharacterConditions.Normal)
-			    && (_movement.CurrentState == CharacterStates.MovementStates.SmokeMode))
+			    && (_condition.CurrentState == CharacterStates.CharacterConditions.SmokeMode))
 			{
 				_movement.ChangeState(CharacterStates.MovementStates.Falling);
 				StopFeedbacks();
@@ -95,9 +95,7 @@ namespace MoreMountains.TopDownEngine // you might want to use your own namespac
 		public virtual void SmokeModeStart()
 		{		
 			if ( !AbilityAuthorized // if the ability is not permitted
-			     || (!_controller.Grounded) // or if we're not grounded
-			     || (_condition.CurrentState != CharacterStates.CharacterConditions.Normal) // or if we're not in normal conditions
-			     || (_movement.CurrentState != CharacterStates.MovementStates.Walking) ) // or if we're not walking
+			     || (_condition.CurrentState != CharacterStates.CharacterConditions.Normal)) // or if we're not in normal conditions
 			{
 				// we do nothing and exit
 				return;
@@ -111,7 +109,7 @@ namespace MoreMountains.TopDownEngine // you might want to use your own namespac
 			}
 
 			// if we're not already in smoke mode, we trigger our sounds
-			if (_movement.CurrentState != CharacterStates.MovementStates.SmokeMode)
+			if (_condition.CurrentState != CharacterStates.CharacterConditions.SmokeMode)
 			{
 				PlayAbilityStartSfx();
 				PlayAbilityUsedSfx();
@@ -120,7 +118,7 @@ namespace MoreMountains.TopDownEngine // you might want to use your own namespac
 				_smokeModeStarted = true;
 			}
 
-			_movement.ChangeState(CharacterStates.MovementStates.SmokeMode);
+			_condition.ChangeState(CharacterStates.CharacterConditions.SmokeMode);
 		}
 
 		/// <summary>
@@ -134,7 +132,7 @@ namespace MoreMountains.TopDownEngine // you might want to use your own namespac
 				if ((_characterMovement != null))
 				{
 					_characterMovement.ResetSpeed();
-					_movement.ChangeState(CharacterStates.MovementStates.Idle);
+					_condition.ChangeState(CharacterStates.CharacterConditions.Normal);
 				}
 				StopFeedbacks();
 				StopSfx();
@@ -177,7 +175,7 @@ namespace MoreMountains.TopDownEngine // you might want to use your own namespac
 		/// </summary>
 		public override void UpdateAnimator()
 		{
-			MMAnimatorExtensions.UpdateAnimatorBool(_animator, _smokeModeAnimationParameter, (_movement.CurrentState == CharacterStates.MovementStates.SmokeMode),_character._animatorParameters, _character.RunAnimatorSanityChecks);
+			MMAnimatorExtensions.UpdateAnimatorBool(_animator, _smokeModeAnimationParameter, (_condition.CurrentState == CharacterStates.CharacterConditions.SmokeMode),_character._animatorParameters, _character.RunAnimatorSanityChecks);
 		}
     }
 }
