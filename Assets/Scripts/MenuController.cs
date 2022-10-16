@@ -7,21 +7,11 @@ using UnityEngine.SceneManagement;
 public class MenuController : MonoBehaviour
 {
    [Header("Levels to Load")]
-   [SerializeField] private string newGameLevel;
-   private string _levelToLoad;
+   [SerializeField] private string gameLevel;
 
-   public void NewGame()
+   public void PlayButton()
    {
-        SceneManager.LoadScene(newGameLevel);
-   }
-
-   public void LoadGame()
-   {
-        if(PlayerPrefs.HasKey("SavedLevel"))
-        {
-            _levelToLoad = PlayerPrefs.GetString("SavedLevel");
-            SceneManager.LoadScene(_levelToLoad);
-        }
+        SceneManager.LoadScene(gameLevel);
    }
 
    public void QuitButton()
