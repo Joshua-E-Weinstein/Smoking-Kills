@@ -29,29 +29,29 @@ namespace MoreMountains.TopDownEngine // you might want to use your own namespac
         [SerializeField] private GameEvent SmokeActivate;
         [SerializeField] private GameEvent SmokeDeactivate;
 
-        [SerializeField] private float MaxSmokeSeconds = 5f;
-        [SerializeField] private float SmokeSecondsLeft;
+        [SerializeField] private FloatReference MaxSmokeSeconds;
+        [SerializeField] private FloatReference SmokeSecondsLeft;
         [SerializeField] private float SmokeRate = 0.5f;
 
 		public void Update()
 		{
 			if (_smokeModeStarted)
 			{
-				SmokeSecondsLeft -= Time.deltaTime;
+				SmokeSecondsLeft.Value -= Time.deltaTime;
 				if (SmokeSecondsLeft <= 0f)
 				{
 					SmokeModeStop();
 				}
-			} else if (SmokeSecondsLeft < MaxSmokeSeconds)
+			} else if (SmokeSecondsLeft < MaxSmokeSeconds && _character.MovementState.CurrentState == CharacterStates.MovementStates.Idle)
 			{
-				SmokeSecondsLeft = Mathf.MoveTowards(SmokeSecondsLeft, MaxSmokeSeconds, SmokeRate * Time.deltaTime);
+				SmokeSecondsLeft.Value = Mathf.MoveTowards(SmokeSecondsLeft, MaxSmokeSeconds, SmokeRate * Time.deltaTime);
 			}
 		}
 
 		protected override void Initialization()
 		{
 			base.Initialization();
-			SmokeSecondsLeft = MaxSmokeSeconds;
+			SmokeSecondsLeft.Value = MaxSmokeSeconds;
 		}
 		
 		/// <summary>
