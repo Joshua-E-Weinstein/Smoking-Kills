@@ -2404,8 +2404,8 @@ MonoBehaviour:
           ButtonText: Debug Stop Sound
         ResetSequentialIndexButton:
           ButtonText: Reset Sequential Index
-        MinVolume: 1
-        MaxVolume: 1
+        MinVolume: 0
+        MaxVolume: 2
         MinPitch: 1
         MaxPitch: 1
         PlaybackTime: {x: 0, y: 0}
