@@ -24,7 +24,7 @@ public class SoundManager : MonoBehaviour
     private void Start()
     {
         AudioSources = new Dictionary<string, AudioSource>();
-        if (background)
+        if (background != null)
             StartBackground();
     }
 
@@ -33,7 +33,7 @@ public class SoundManager : MonoBehaviour
         if (backgroundSource == null)
             backgroundSource = gameObject.AddComponent<AudioSource>();
 
-        backgroundSource.volume = 0.5f;
+        backgroundSource.volume = 2.5f;
         backgroundSource.clip = background;
         backgroundSource.loop = true;
         backgroundSource.Play();
