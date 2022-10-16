@@ -405,7 +405,7 @@ MonoBehaviour:
     UseConstant: 0
     ConstantValue: 0
     Variable: {fileID: 11400000, guid: 93ddbb2507ea16c4586d0aaddc0894cf, type: 2}
-  SmokeRate: 0.7
+  SmokeRate: 0.25
 --- !u!114 &8350448052919318671
 MonoBehaviour:
   m_ObjectHideFlags: 0
