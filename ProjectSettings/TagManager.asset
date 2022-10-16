@@ -9,6 +9,7 @@ TagManager:
   - Enemy
   - World
   - NoMask
+  - Artifact
   layers:
   - Default
   - TransparentFX
@@ -33,12 +34,12 @@ TagManager:
   - Camera2
   - Camera3
   - Camera4
+  - PermeableObstacles
   - 
   - 
   - 
   - 
-  - 
-  - 
+  - PostProcessing
   - 
   - 
   - 
