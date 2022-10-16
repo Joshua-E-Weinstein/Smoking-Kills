@@ -307,6 +307,8 @@ MonoBehaviour:
   ModelShouldRotate: 1
   ModelRotationValueLeft: {x: 0, y: 180, z: 0}
   ModelRotationValueRight: {x: 0, y: 0, z: 0}
+  ModelRotationValueUp: {x: 0, y: 0, z: 0}
+  ModelRotationValueDown: {x: 0, y: 0, z: 180}
   ModelRotationSpeed: 0
   InitialFacingDirection: 1
   AbsoluteThresholdMovement: 0.5

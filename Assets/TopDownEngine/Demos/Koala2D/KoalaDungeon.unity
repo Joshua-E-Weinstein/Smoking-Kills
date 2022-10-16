@@ -30366,6 +30366,8 @@ MonoBehaviour:
   ModelShouldRotate: 0
   ModelRotationValueLeft: {x: 0, y: 180, z: 0}
   ModelRotationValueRight: {x: 0, y: 0, z: 0}
+  ModelRotationValueUp: {x: 0, y: 0, z: 0}
+  ModelRotationValueDown: {x: 0, y: 0, z: 180}
   ModelRotationSpeed: 0
   InitialFacingDirection: 1
   AbsoluteThresholdMovement: 0.5
@@ -45101,7 +45103,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4229352479014310, guid: d73aa2d3898a69541852a65f3a8e14e0, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -100
+      value: -29.050003
       objectReference: {fileID: 0}
     - target: {fileID: 4729885435761226, guid: d73aa2d3898a69541852a65f3a8e14e0, type: 3}
       propertyPath: m_RootOrder
@@ -45151,6 +45153,16 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: -100
       objectReference: {fileID: 0}
+    - target: {fileID: 114521079161782168, guid: d73aa2d3898a69541852a65f3a8e14e0,
+        type: 3}
+      propertyPath: m_FrequencyGain
+      value: 0.5000001
+      objectReference: {fileID: 0}
+    - target: {fileID: 114912011440160236, guid: d73aa2d3898a69541852a65f3a8e14e0,
+        type: 3}
+      propertyPath: m_BoundingVolume
+      value: 
+      objectReference: {fileID: 1392788253}
     - target: {fileID: 224001197845738650, guid: d73aa2d3898a69541852a65f3a8e14e0,
         type: 3}
       propertyPath: m_AnchorMax.y

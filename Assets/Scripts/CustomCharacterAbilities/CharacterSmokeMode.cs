@@ -29,12 +29,37 @@ namespace MoreMountains.TopDownEngine // you might want to use your own namespac
         [SerializeField] private GameEvent SmokeActivate;
         [SerializeField] private GameEvent SmokeDeactivate;
 
+        [SerializeField] private float MaxSmokeSeconds = 5f;
+        [SerializeField] private float SmokeSecondsLeft;
+        [SerializeField] private float SmokeRate = 0.5f;
+
+		public void Update()
+		{
+			if (_smokeModeStarted)
+			{
+				SmokeSecondsLeft -= Time.deltaTime;
+				if (SmokeSecondsLeft <= 0f)
+				{
+					SmokeModeStop();
+				}
+			} else if (SmokeSecondsLeft < MaxSmokeSeconds)
+			{
+				SmokeSecondsLeft = Mathf.MoveTowards(SmokeSecondsLeft, MaxSmokeSeconds, SmokeRate * Time.deltaTime);
+			}
+		}
+
+		protected override void Initialization()
+		{
+			base.Initialization();
+			SmokeSecondsLeft = MaxSmokeSeconds;
+		}
+		
 		/// <summary>
 		/// At the beginning of each cycle, we check if we've pressed or released the smoke mode button
 		/// </summary>
 		protected override void HandleInput()
 		{
-			if ((_inputManager.SmokeModeButton.State.CurrentState == MMInput.ButtonStates.ButtonDown || _inputManager.SmokeModeButton.State.CurrentState == MMInput.ButtonStates.ButtonPressed) && PlayerSmoke.smoke > 0)
+			if ((_inputManager.SmokeModeButton.State.CurrentState == MMInput.ButtonStates.ButtonDown ))
 			{
 				SmokeModeStart();
 			}				
@@ -95,7 +120,8 @@ namespace MoreMountains.TopDownEngine // you might want to use your own namespac
 		public virtual void SmokeModeStart()
 		{		
 			if ( !AbilityAuthorized // if the ability is not permitted
-			     || (_condition.CurrentState != CharacterStates.CharacterConditions.Normal)) // or if we're not in normal conditions
+			     || (_condition.CurrentState != CharacterStates.CharacterConditions.Normal) // or if we're not in normal conditions
+				 || (SmokeSecondsLeft <= 0f))
 			{
 				// we do nothing and exit
 				return;
