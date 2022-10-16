@@ -204,6 +204,7 @@ MonoBehaviour:
     Actions:
       array:
       - {fileID: 3447363153661893358}
+      - {fileID: 5692019965219306995}
     Transitions:
       array:
       - Decision: {fileID: 8318411188160593401}
@@ -436,7 +437,7 @@ MonoBehaviour:
     m_Bits: 256
   ObstaclesDetectionMode: 1
   CanTargetSelf: 0
-  TargetCheckFrequency: 1
+  TargetCheckFrequency: 0.3
   OverlapMaximum: 10
 --- !u!114 &1985644358416921635
 MonoBehaviour:
@@ -898,6 +899,7 @@ MonoBehaviour:
   Friction: 0
   AddedForce: {x: 0, y: 0, z: 0}
   FreeMovement: 1
+  MovementInput: {x: 0, y: 0, z: 0}
   OverHole: 0
   GroundLayerMask:
     serializedVersion: 2

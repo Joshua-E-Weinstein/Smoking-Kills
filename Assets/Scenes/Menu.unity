@@ -713,10 +713,10 @@ Camera:
   m_FocalLength: 50
   m_NormalizedViewPortRect:
     serializedVersion: 2
-    x: 0
+    x: 0.34934497
     y: 0
-    width: 0.99938613
-    height: 1
+    width: 0.5958273
+    height: 0.59611654
   near clip plane: 0.3
   far clip plane: 1000
   field of view: 60
@@ -1291,7 +1291,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c537b6a091c5f9b4d9b77d24052ba833, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameLevel: Test Scene - Jordan
+  gameLevel: Museum
   credits: Credits
   volumeSlider: {fileID: 5757363589910439438}
   clickClip: {fileID: 8300000, guid: f411fd45001a5df48a07a0ac0b994506, type: 3}
