@@ -11,4 +11,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Credits.unity
     guid: 3436257fa92bcb048a01268c14bc174e
+  - enabled: 1
+    path: Assets/Scenes/Testing/Test Scene - Jordan.unity
+    guid: 70f096799b90c3a45861eddf7de56f4a
+  - enabled: 1
+    path: Assets/Scenes/Win Screen.unity
+    guid: 4b41013d73757b24f993a495a4fa681c
   m_configObjects: {}

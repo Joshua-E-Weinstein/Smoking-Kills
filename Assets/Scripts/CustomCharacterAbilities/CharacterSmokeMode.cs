@@ -115,6 +115,8 @@ namespace MoreMountains.TopDownEngine // you might want to use your own namespac
 				PlayAbilityUsedSfx();
 				PlayAbilityStartFeedbacks();
 				SmokeActivate.Raise();
+				Debug.Log(1);
+				Physics.IgnoreLayerCollision (10, 23, true);
 				_smokeModeStarted = true;
 			}
 
@@ -137,6 +139,7 @@ namespace MoreMountains.TopDownEngine // you might want to use your own namespac
 				StopFeedbacks();
 				StopSfx();
 				SmokeDeactivate.Raise();
+				Physics.IgnoreLayerCollision (10, 23, false);
 				_smokeModeStarted = false;
 			}            
 		}
