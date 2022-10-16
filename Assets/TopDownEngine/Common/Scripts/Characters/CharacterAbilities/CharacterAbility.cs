@@ -336,7 +336,7 @@ namespace MoreMountains.TopDownEngine
 		/// </summary>
 		protected virtual void PlayAbilityStopFeedbacks()
 		{
-			AbilityStopFeedbacks?.PlayFeedbacks();
+			AbilityStopFeedbacks?.StopFeedbacks();
 		}
 
 		/// <summary>

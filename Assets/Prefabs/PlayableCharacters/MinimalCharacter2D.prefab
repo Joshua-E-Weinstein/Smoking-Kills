@@ -395,6 +395,9 @@ MonoBehaviour:
   SmokeModeSpeed: 9
   SmokeActivate: {fileID: 11400000, guid: bed7d54db7c234b4ab4915a83e4f4cfd, type: 2}
   SmokeDeactivate: {fileID: 11400000, guid: e2fd688b6a3b6484fa3c2df3503c7558, type: 2}
+  MaxSmokeSeconds: 5
+  SmokeSecondsLeft: 0
+  SmokeRate: 0.5
 --- !u!114 &8350448052919318671
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -701,7 +704,7 @@ MonoBehaviour:
   boundaries:
     horizontalBoundary: 0
     verticalBoundary: 0
-  velocityScale: 1
+  velocityScale: 0.23
   accelerationScale: 0
   gravity: {x: 0, y: 0, z: 0}
   externalForce: {x: 0, y: 0, z: 0}
