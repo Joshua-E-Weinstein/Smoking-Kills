@@ -71,6 +71,7 @@ namespace MoreMountains.TopDownEngine
 		[MMReadOnly]
 		[Tooltip("whether or not the character is in free movement mode or not")]
 		public bool FreeMovement = true;
+		public Vector3 MovementInput;
         
 		/// the collider's center coordinates
 		public virtual Vector3 ColliderCenter { get { return Vector3.zero; }  }

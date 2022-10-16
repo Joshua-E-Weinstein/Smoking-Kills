@@ -23,6 +23,7 @@ GameObject:
   - component: {fileID: -3346912431416018127}
   - component: {fileID: 8350448052919318671}
   - component: {fileID: 1475697893120672301}
+  - component: {fileID: 7118999028519863791}
   m_Layer: 10
   m_Name: MinimalCharacter2D
   m_TagString: Player
@@ -159,6 +160,7 @@ MonoBehaviour:
   Friction: 0
   AddedForce: {x: 0, y: 0, z: 0}
   FreeMovement: 1
+  MovementInput: {x: 0, y: 0, z: 0}
   OverHole: 0
   GroundLayerMask:
     serializedVersion: 2
@@ -430,6 +432,34 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   RuntimeSet: {fileID: 11400000, guid: 20f10a7f8c9c1214c954d7993dcb13b0, type: 2}
+--- !u!114 &7118999028519863791
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1790328835693532}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 42b9b78066caa6340a5f5389ee14fd1c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Event: {fileID: 11400000, guid: 9856427e2d5d3d04092dab5a2d0f1730, type: 2}
+  Response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 114307563035583202}
+        m_TargetAssemblyTypeName: MoreMountains.TopDownEngine.Character, MoreMountains.TopDownEngine
+        m_MethodName: GameOver
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1997364199477008
 GameObject:
   m_ObjectHideFlags: 0

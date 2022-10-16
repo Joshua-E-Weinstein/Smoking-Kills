@@ -388,6 +388,9 @@ namespace MoreMountains.TopDownEngine
             
 			_normalizedInput = _currentInput.normalized;
 
+			if (_normalizedInput.magnitude > 0.2)
+				_controller.MovementInput = _normalizedInput;
+
 			float interpolationSpeed = 1f;
             
 			if ((Acceleration == 0) || (Deceleration == 0))

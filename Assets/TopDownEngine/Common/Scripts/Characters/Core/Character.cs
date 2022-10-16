@@ -4,6 +4,7 @@ using MoreMountains.Tools;
 using System.Collections.Generic;
 using System;
 using Random = UnityEngine.Random;
+using UnityEngine.SceneManagement;
 
 namespace MoreMountains.TopDownEngine
 {
@@ -791,6 +792,13 @@ namespace MoreMountains.TopDownEngine
 				CharacterHealth.OnDeath -= OnDeath;
 				CharacterHealth.OnHit -= OnHit;
 			}			
+		}
+		
+
+		public void GameOver()
+		{
+			SceneManager.LoadScene("Game Over Screen");
+			Debug.Log(3);
 		}
 	}
 }

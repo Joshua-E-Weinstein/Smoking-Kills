@@ -83,6 +83,8 @@ namespace MoreMountains.TopDownEngine
 		[Tooltip("whether or not this character is facing right")]
 		public bool IsFacingRight = true;
 
+		private Vector3 _inputDirection;
+
 		protected Vector3 _targetModelRotation;
 		protected CharacterHandleWeapon _characterHandleWeapon;
 		protected Vector3 _lastRegisteredVelocity;
@@ -286,7 +288,9 @@ namespace MoreMountains.TopDownEngine
 			{
 				return;
 			}
-
+			Vector3 newDirection = _controller.MovementInput;
+			_targetModelRotation = new Vector3(0, 0, Mathf.Atan2(newDirection.y, newDirection.x) * Mathf.Rad2Deg - 90);
+			Debug.Log(_targetModelRotation.z);
 			if (ModelRotationSpeed > 0f)
 			{
 				if (_character.CharacterModel.transform.localEulerAngles.z - _targetModelRotation.z >= 180)
