@@ -11,6 +11,8 @@ GameObject:
   - component: {fileID: 5198908353977289244}
   - component: {fileID: 5198908353977289246}
   - component: {fileID: 5198908353977289245}
+  - component: {fileID: 7512296737403857919}
+  - component: {fileID: 6103987214608643406}
   m_Layer: 0
   m_Name: Sceptre
   m_TagString: Artifact
@@ -111,3 +113,38 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.6875, y: 1.5625}
   m_EdgeRadius: 0
+--- !u!95 &7512296737403857919
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5198908353977289243}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 0306a8801e6ec8846bfac17582600326, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &6103987214608643406
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5198908353977289243}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cb570ec90c0c11c47850f432f151fc53, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Player: {fileID: 0}
+  Animator: {fileID: 7512296737403857919}
+  PlayerSet: {fileID: 11400000, guid: 20f10a7f8c9c1214c954d7993dcb13b0, type: 2}

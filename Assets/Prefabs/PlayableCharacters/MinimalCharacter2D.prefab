@@ -22,6 +22,7 @@ GameObject:
   - component: {fileID: 114450207927170996}
   - component: {fileID: -3346912431416018127}
   - component: {fileID: 8350448052919318671}
+  - component: {fileID: 1475697893120672301}
   m_Layer: 10
   m_Name: MinimalCharacter2D
   m_TagString: Player
@@ -407,6 +408,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   winScreen: Win Screen
+--- !u!114 &1475697893120672301
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1790328835693532}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe5c87b76fbf63c458cadedf84b87185, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  RuntimeSet: {fileID: 11400000, guid: 20f10a7f8c9c1214c954d7993dcb13b0, type: 2}
 --- !u!1 &1997364199477008
 GameObject:
   m_ObjectHideFlags: 0
