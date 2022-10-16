@@ -6,8 +6,10 @@ using UnityEngine.SceneManagement;
 
 public class MenuController : MonoBehaviour
 {
-   [Header("Levels to Load")]
-   [SerializeField] private string gameLevel;
+    [SerializeField] private string gameLevel;
+    [SerializeField] private string credits;
+    [SerializeField] private Slider volumeSlider;
+    [SerializeField] private AudioClip clickClip;
 
    public void PlayButton()
    {
@@ -18,4 +20,19 @@ public class MenuController : MonoBehaviour
    {
         Application.Quit();
    }
+
+   public void CreditsButton()
+    {
+        SceneManager.LoadScene(credits);
+    }
+
+    public void SetVolume(float volume)
+    {
+        AudioListener.volume = volume;
+    }
+
+    public void PlayClick()
+    {
+        SoundManager.Instance.PlayClip("click", clickClip, false, 0.5f);
+    }
 }
