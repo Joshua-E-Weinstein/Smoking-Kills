@@ -173,7 +173,7 @@ namespace MoreMountains.TopDownEngine
 		{
 			base.ProcessAbility();
 
-			if (_condition.CurrentState != CharacterStates.CharacterConditions.Normal)
+			if (_condition.CurrentState != CharacterStates.CharacterConditions.Normal && _condition.CurrentState != CharacterStates.CharacterConditions.SmokeMode)
 			{
 				return;
 			}
@@ -291,26 +291,11 @@ namespace MoreMountains.TopDownEngine
 			{
 				if (_character.CharacterModel.transform.localEulerAngles.z - _targetModelRotation.z >= 180)
 				{
-					Debug.Log(_character.CharacterModel.transform.localEulerAngles.z + " " + _targetModelRotation.z);
 					_targetModelRotation.z += 360;
 				} else if (_character.CharacterModel.transform.localEulerAngles.z - _targetModelRotation.z <= -180){
-					Debug.Log(_character.CharacterModel.transform.localEulerAngles.z + " " + _targetModelRotation.z);
 					_targetModelRotation.z -= 360;
 				}
 				_character.CharacterModel.transform.localEulerAngles = Vector3.Lerp(_character.CharacterModel.transform.localEulerAngles, _targetModelRotation, Time.deltaTime * ModelRotationSpeed);
-				
-
-				
-				
-				
-				// else
-				// 	_character.CharacterModel.transform.localEulerAngles = Vector3.Lerp(_character.CharacterModel.transform.localEulerAngles, _targetModelRotation, Time.deltaTime * ModelRotationSpeed);
-				// Vector3 target = Vector3.Lerp(_character.CharacterModel.transform.localEulerAngles, _targetModelRotation, Time.deltaTime * ModelRotationSpeed);
-				// Vector3 newRotation = Vector3.RotateTowards(_character.CharacterModel.transform.up, target, 1, 0.0f);
-				// Debug.Log(newRotation.x);
-				// Debug.Log(newRotation.y);
-				// Debug.Log(newRotation.z);
-				// _character.CharacterModel.transform.rotation = Quaternion.LookRotation(_targetModelRotation);
 			}
 			else
 			{
