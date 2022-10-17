@@ -829,7 +829,7 @@ MonoBehaviour:
   srcBlend: 5
   dstBlend: 1
   blendOp: 0
-  color: {r: 1, g: 1, b: 1, a: 1}
+  color: {r: 0, g: 0, b: 0, a: 1}
   noiseTexture: {fileID: 2800000, guid: ff70acd9d6132428b8cbea06fbf16801, type: 3}
   densityNoise: 0.8
   densityNoiseOffset: 0.5
