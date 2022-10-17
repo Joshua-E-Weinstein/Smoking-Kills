@@ -314,6 +314,10 @@ MonoBehaviour:
     Font Source
 
 
+
+    Special
+    thanks to:
+
 '
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: fa34195bc73b1f141a79acd39e34abfb, type: 2}
@@ -834,7 +838,10 @@ MonoBehaviour:
     Lau
 
 
-    Pix3M (on DeviantArt)'
+    Pix3M (on DeviantArt)
+
+
+    Emmanuel Lastname'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: fa34195bc73b1f141a79acd39e34abfb, type: 2}
   m_sharedMaterial: {fileID: -7516322842187974590, guid: fa34195bc73b1f141a79acd39e34abfb,
