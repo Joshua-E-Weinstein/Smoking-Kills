@@ -1090,7 +1090,7 @@
     "m_ShaderOutputName": "B",
     "m_StageCapability": 3,
     "m_Value": {
-        "e00": 0.10000000149011612,
+        "e00": 0.05000000074505806,
         "e01": 2.0,
         "e02": 2.0,
         "e03": 2.0,
@@ -2378,8 +2378,8 @@
     "m_ObjectId": "7bbdb727580d43c0a2e80b5d2864cc67",
     "m_Title": "Flicker",
     "m_Position": {
-        "x": -1942.0,
-        "y": -208.00013732910157
+        "x": -1968.0,
+        "y": -208.0
     }
 }
 
@@ -2882,7 +2882,7 @@
     "m_ShaderOutputName": "B",
     "m_StageCapability": 3,
     "m_Value": {
-        "e00": 5.0,
+        "e00": 8.0,
         "e01": 2.0,
         "e02": 2.0,
         "e03": 2.0,
@@ -3915,7 +3915,7 @@
     "m_ShaderOutputName": "B",
     "m_StageCapability": 3,
     "m_Value": {
-        "e00": 5.0,
+        "e00": 8.0,
         "e01": 2.0,
         "e02": 2.0,
         "e03": 2.0,
